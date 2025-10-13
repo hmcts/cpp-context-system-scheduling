@@ -1,0 +1,32 @@
+{
+  "id": "36c9ac9b-a75e-412e-a48b-32050f38cf11",
+  "name": "MIReport",
+  "description": "Generates reports for the cases",
+  "type": "REST",
+  "parameters": {
+    "endpointDefinition": {
+      "baseUri": "http://localhost:8080/mi-command-api/command/api/rest/mi",
+      "resource": "/generate-case-report",
+      "mediaType": "mi.command.generate-case-report",
+      "queryParams": [
+        "xyz"
+      ]
+    },
+    "method": "POST",
+    "envelope": {
+      "_metadata": {
+        "id": "861c9430-7bc6-4bf0-b549-6534394b8d65",
+        "name": "%s",
+        "correlation": {
+          "client": "d51597dc-2526-4c71-bd08-5031c79f11e1"
+        },
+        "context": {
+          "session": "45b0c3fe-afe6-4652-882f-7882d79eadd9",
+          "user": "7aee5dea-b0de-4604-b49b-86c7788cfc4b"
+        }
+      },
+      "xyz": "Test"
+    }
+  },
+  "cronExpression": "0 0/2 * * * ?"
+}

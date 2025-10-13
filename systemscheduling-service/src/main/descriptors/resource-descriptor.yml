@@ -1,0 +1,55 @@
+---
+resource_descriptor:
+  spec_version: '1.0.0'
+  version: '${project.version}'
+
+  resources:
+    - name: java:/app/systemscheduling-service/DS.eventstore
+      type: xa-datasource
+      setup:
+        - type: liquibase
+          maven:
+            groupId: uk.gov.justice.services
+            artifactId: event-repository-liquibase
+            type: jar
+            version: '${cpp.framework.version}'
+        - type: liquibase
+          maven:
+            groupId: uk.gov.justice.services
+            artifactId: aggregate-snapshot-repository-liquibase
+            type: jar
+            version: '${project.version}'
+
+    - name: java:/DS.systemscheduling
+      type: xa-datasource
+      setup:
+        - type: liquibase
+          maven:
+            groupId: uk.gov.justice.services
+            artifactId: event-buffer-liquibase
+            type: jar
+            version: '${cpp.framework.version}'
+        - type: liquibase
+          maven:
+            groupId: uk.gov.moj.cpp.systemscheduling
+            artifactId: systemscheduling-viewstore-liquibase
+            type: jar
+            version: '${project.version}'
+
+    - name: systemscheduling.handler.command
+      type: queue
+    - name: systemscheduling.event
+      type: topic
+    - name: public.event
+      type: topic
+
+  services:
+    # systemscheduling provides these service mappings
+    - name: 'systemscheduling-service'
+      id: 'systemscheduling_service'
+      target: '/systemscheduling-service'
+      map:
+        - '/systemscheduling-command-api'
+        - '/systemscheduling-command-handler'
+        - '/systemscheduling-event-processor'
+      matcher: '/systemscheduling-[^/]+'

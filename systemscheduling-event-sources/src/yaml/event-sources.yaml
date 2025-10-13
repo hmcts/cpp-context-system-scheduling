@@ -1,0 +1,7 @@
+event_sources:
+  - name: systemscheduling.event.source
+    is_default: true
+    location:
+      jms_uri:  jms:topic:systemscheduling.event
+      rest_uri: http://localhost:8080/systemscheduling-service/event-source-api/rest
+      data_source: java:/app/systemscheduling-service/DS.eventstore
