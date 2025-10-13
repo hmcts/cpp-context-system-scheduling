@@ -1,0 +1,133 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://cpp.moj.gov.uk/systemscheduling/json/schemas/event/systemscheduling.job-scheduled.json",
+  "definitions": {
+    "uuid": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
+    }
+  },
+  "type": "object",
+  "properties": {
+    "id": {
+      "$ref": "#/definitions/uuid"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "REST"
+      ]
+    },
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "endpointDefinition": {
+          "type": "object",
+          "properties": {
+            "baseUri": {
+              "type": "string"
+            },
+            "resource": {
+              "type": "string"
+            },
+            "mediaType": {
+              "type": "string"
+            },
+            "queryParams": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "baseUri",
+            "resource",
+            "mediaType"
+          ]
+        },
+        "method": {
+          "enum": [
+            "POST"
+          ]
+        },
+        "envelope": {
+          "type": "object",
+          "properties": {
+            "_metadata": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "correlation": {
+                  "type": "object",
+                  "properties": {
+                    "client": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "client"
+                  ]
+                },
+                "context": {
+                  "type": "object",
+                  "properties": {
+                    "session": {
+                      "type": "string"
+                    },
+                    "user": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "user"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "name"
+              ]
+            }
+          },
+          "required": [
+            "_metadata"
+          ]
+        },
+        "capability": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "endpointDefinition",
+        "method",
+        "envelope"
+      ]
+    },
+    "cronExpression": {
+      "type": "string",
+      "description": "Accepted Cron Expression Examples : please refer to http://www.quartz-scheduler.org/documentation/quartz-2.1.x/tutorials/crontrigger.html#format"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "description",
+    "type",
+    "parameters",
+    "cronExpression"
+  ]
+}

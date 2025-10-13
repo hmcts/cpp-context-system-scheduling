@@ -1,0 +1,25 @@
+package uk.gov.moj.cpp.system.scheduling.command.api.accesscontrol;
+
+import uk.gov.moj.cpp.accesscontrol.drools.Outcome;
+import uk.gov.moj.cpp.accesscontrol.drools.Action;
+import java.util.Arrays;
+
+global uk.gov.moj.cpp.accesscontrol.common.providers.UserAndGroupProvider userAndGroupProvider;
+
+rule "Command - API - Action - systemscheduling.command.schedule-job"
+  when
+    $outcome: Outcome();
+    $action: Action(name == "systemscheduling.command.schedule-job");
+    eval(userAndGroupProvider.isMemberOfAnyOfTheSuppliedGroups($action, "System Users"));
+  then
+    $outcome.setSuccess(true);
+end
+
+rule "Command - API - Action - systemscheduling.command.cancel-job"
+  when
+    $outcome: Outcome();
+    $action: Action(name == "systemscheduling.command.cancel-job");
+    eval(userAndGroupProvider.isMemberOfAnyOfTheSuppliedGroups($action, "System Users"));
+  then
+    $outcome.setSuccess(true);
+end

@@ -1,0 +1,18 @@
+#%RAML 0.8
+title: API Using media type in the URL
+baseUri: message://command/handler/message/systemscheduling
+
+/systemscheduling.handler.command:
+  post:
+    body:
+      application/vnd.systemscheduling.command.schedule-job+json:
+         example:
+            !include json/systemscheduling.command.schedule-job.json
+         schema:
+             !include json/schema/systemscheduling.command.schedule-job.json
+
+      application/vnd.systemscheduling.command.cancel-job+json:
+         example:
+            !include json/systemscheduling.command.cancel-job.json
+         schema:
+             !include json/schema/systemscheduling.command.cancel-job.json

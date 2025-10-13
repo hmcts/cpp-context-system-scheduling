@@ -1,0 +1,41 @@
+#%RAML 0.8
+title: systemscheduling - Command API
+protocols: [ HTTP ]
+
+baseUri: http://localhost:8080/systemscheduling-command-api/command/api/rest/systemscheduling
+
+/schedule-job:
+  post:
+    description: |
+      Schedule a job
+      ...
+      (mapping):
+          requestType: application/vnd.systemscheduling.command.schedule-job+json
+          name: systemscheduling.command.schedule-job
+      ...
+    body:
+      application/vnd.systemscheduling.command.schedule-job+json:
+         example:
+            !include json/systemscheduling.command.schedule-job.json
+         schema:
+             !include json/schema/systemscheduling.command.schedule-job.json
+
+    responses:
+      202:
+        description: Accepted
+
+/cancel-job/{id}:
+  post:
+    description: |
+      Cancel previously scheduled job by id
+      ...
+      (mapping):
+          requestType: application/vnd.systemscheduling.command.cancel-job+json
+          name: systemscheduling.command.cancel-job
+      ...
+    body:
+      application/vnd.systemscheduling.command.cancel-job+json: !!null
+
+    responses:
+      202:
+        description: Accepted
