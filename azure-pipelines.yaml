@@ -21,7 +21,7 @@ resources:
       type: github
       name: hmcts/cpp-azure-devops-templates
       endpoint: 'hmcts'
-      ref: 'main'
+      ref: 'dev/PEG-2215-public-context-settings'
 
 pool:
   name: "MDV-ADO-AGENT-AKS-01"
