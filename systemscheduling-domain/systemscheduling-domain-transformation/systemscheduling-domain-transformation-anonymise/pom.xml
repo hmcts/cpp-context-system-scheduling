@@ -5,12 +5,12 @@
     <parent>
         <groupId>uk.gov.moj.cpp.systemscheduling</groupId>
         <artifactId>systemscheduling-domain-transformation</artifactId>
-        <version>17.101.4-SNAPSHOT</version>
+        <version>17.101.5-SNAPSHOT</version>
     </parent>
 
     <groupId>uk.gov.moj.cpp.systemscheduling</groupId>
     <artifactId>systemscheduling-domain-transformation-anonymise</artifactId>
-    <version>17.101.4-SNAPSHOT</version>
+    <version>17.101.5-SNAPSHOT</version>
 
 
     <dependencies>
