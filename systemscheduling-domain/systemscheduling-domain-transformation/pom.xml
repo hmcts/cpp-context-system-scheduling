@@ -5,12 +5,12 @@
     <parent>
         <groupId>uk.gov.moj.cpp.systemscheduling</groupId>
         <artifactId>systemscheduling-domain</artifactId>
-        <version>17.101.4-SNAPSHOT</version>
+        <version>17.101.4-PEG-2366-SNAPSHOT</version>
     </parent>
 
     <groupId>uk.gov.moj.cpp.systemscheduling</groupId>
     <artifactId>systemscheduling-domain-transformation</artifactId>
-    <version>17.101.4-SNAPSHOT</version>
+    <version>17.101.4-PEG-2366-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
