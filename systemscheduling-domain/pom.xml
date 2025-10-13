@@ -5,7 +5,7 @@
     <parent>
         <groupId>uk.gov.moj.cpp.systemscheduling</groupId>
         <artifactId>systemscheduling-parent</artifactId>
-        <version>17.101.4-PEG-2366-SNAPSHOT</version>
+        <version>17.101.5-PEG-2366-SNAPSHOT</version>
     </parent>
 
     <artifactId>systemscheduling-domain</artifactId>
