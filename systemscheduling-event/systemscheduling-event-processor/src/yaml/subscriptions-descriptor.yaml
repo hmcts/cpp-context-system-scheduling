@@ -1,0 +1,14 @@
+subscriptions_descriptor:
+  spec_version: 1.0.0
+  service: systemscheduling
+  service_component: EVENT_PROCESSOR
+  subscriptions:
+    - name: event listener subscription
+      events:
+        - name: systemscheduling.job-scheduled
+          schema_uri: http://moj.gov.uk/cpp/systemscheduling/json/schemas/event/systemscheduling.job-scheduled.json
+
+        - name: systemscheduling.job-canceled
+          schema_uri: http://moj.gov.uk/cpp/systemscheduling/json/schemas/event/systemscheduling.job-canceled.json
+
+      event_source_name: systemscheduling.event.source

@@ -1,0 +1,36 @@
+{
+  "id": "36c9ac9b-a75e-412e-a48b-32050f38cf11",
+  "name": "MIReport",
+  "description": "Generates reports for the cases",
+  "type": "REST",
+  "parameters": {
+    "endpointDefinition": {
+      "baseUri": "http://localhost:8080/mi-command-api/command/api/rest/mi",
+      "resource": "/case-started/{caseId}/{URN}",
+      "mediaType": "mi.command.generate-case-report",
+      "queryParams": [
+        "xyz"
+      ]
+    },
+    "method": "POST",
+    "envelope": {
+      "_metadata": {
+        "id": "861c9430-7bc6-4bf0-b549-6534394b8d65",
+        "name": "mi.command.generate-case-report",
+        "correlation": {
+          "client": "d51597dc-2526-4c71-bd08-5031c79f11e1"
+        },
+        "context": {
+          "session": "45b0c3fe-afe6-4652-882f-7882d79eadd9",
+          "user": "72251abb-5872-46e3-9045-950ac5bae399"
+        }
+      },
+      "caseId": "786876876",
+      "URN": "jhgjhg",
+      "xyz": "jhgjhg",
+      "abc": "jhgjhg",
+      "adsfa": ""
+    }
+  },
+  "cronExpression": "0 0/0 * * * ?"
+}
