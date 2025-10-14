@@ -10,7 +10,7 @@
 
     <groupId>uk.gov.moj.cpp.systemscheduling</groupId>
     <artifactId>systemscheduling-parent</artifactId>
-    <version>17.101.8-SNAPSHOT</version>
+    <version>17.101.7</version>
 
     <packaging>pom</packaging>
 
