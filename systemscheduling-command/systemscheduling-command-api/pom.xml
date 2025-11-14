@@ -3,7 +3,7 @@
     <parent>
         <artifactId>systemscheduling-command</artifactId>
         <groupId>uk.gov.moj.cpp.systemscheduling</groupId>
-        <version>17.101.8</version>
+        <version>17.101.9-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
