@@ -10,7 +10,7 @@
 
     <groupId>uk.gov.moj.cpp.systemscheduling</groupId>
     <artifactId>systemscheduling-parent</artifactId>
-    <version>17.104.9-PEG-2791-SNAPSHOT</version>
+    <version>17.104.10-PEG-2791-SNAPSHOT</version>
 
     <packaging>pom</packaging>
 
