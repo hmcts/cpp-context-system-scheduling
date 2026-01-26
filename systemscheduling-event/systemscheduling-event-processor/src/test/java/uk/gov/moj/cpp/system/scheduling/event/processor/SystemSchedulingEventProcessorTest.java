@@ -13,7 +13,7 @@ import static uk.gov.justice.services.test.utils.core.messaging.JsonEnvelopeBuil
 import uk.gov.justice.services.messaging.JsonEnvelope;
 import uk.gov.moj.cpp.system.scheduling.event.processor.scheduler.CppJobScheduler;
 
-import javax.json.Json;
+import uk.gov.justice.services.messaging.JsonObjects;
 import javax.json.JsonObject;
 
 import org.junit.jupiter.api.Test;
@@ -37,7 +37,7 @@ public class SystemSchedulingEventProcessorTest {
 
     @Test
     public void jobCreated() throws SchedulerException {
-        final JsonObject jobDetails = Json.createObjectBuilder().build();
+        final JsonObject jobDetails = JsonObjects.createObjectBuilder().build();
         final JsonEnvelope event = envelope()
                 .with(metadataBuilder()
                         .withId(randomUUID())
@@ -50,7 +50,7 @@ public class SystemSchedulingEventProcessorTest {
     @Test
     public void jobCanceled() throws SchedulerException {
         final String jobId = "Job to cancel";
-        final JsonObject jobDetails = Json.createObjectBuilder().add("id", jobId).build();
+        final JsonObject jobDetails = JsonObjects.createObjectBuilder().add("id", jobId).build();
         final JsonEnvelope event = envelope()
                 .with(metadataBuilder()
                         .withId(randomUUID())

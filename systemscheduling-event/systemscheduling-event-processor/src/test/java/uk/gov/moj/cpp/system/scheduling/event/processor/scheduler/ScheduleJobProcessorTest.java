@@ -28,7 +28,7 @@ import uk.gov.justice.services.test.utils.core.matchers.JsonEnvelopeMatcher;
 import java.util.Optional;
 import java.util.Set;
 
-import javax.json.Json;
+import uk.gov.justice.services.messaging.JsonObjects;
 import javax.json.JsonObject;
 
 import org.junit.jupiter.api.Test;
@@ -97,7 +97,7 @@ public class ScheduleJobProcessorTest {
         final JsonObject endpointDefinition = payload.getJsonObject("parameters").getJsonObject("endpointDefinition");
 
         final Set<QueryParam> queryParams = Optional.ofNullable(endpointDefinition.getJsonArray("queryParams"))
-                .orElse(Json.createArrayBuilder().build())
+                .orElse(JsonObjects.createArrayBuilder().build())
                 .stream().map(p -> new QueryParam(p.toString(), false, ParameterType.STRING)).collect(toSet());
 
         return new EndpointDefinition(

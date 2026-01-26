@@ -13,7 +13,7 @@ import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
 import static com.github.tomakehurst.wiremock.client.WireMock.urlMatching;
 import static com.github.tomakehurst.wiremock.client.WireMock.urlPathEqualTo;
 import static com.github.tomakehurst.wiremock.client.WireMock.verify;
-import static javax.json.Json.createObjectBuilder;
+import static uk.gov.justice.services.messaging.JsonObjects.createObjectBuilder;
 import static javax.ws.rs.core.HttpHeaders.CONTENT_TYPE;
 import static javax.ws.rs.core.Response.Status.OK;
 import static org.awaitility.Awaitility.waitAtMost;
@@ -24,7 +24,7 @@ import java.time.Duration;
 import java.util.UUID;
 import java.util.stream.Stream;
 
-import javax.json.Json;
+import uk.gov.justice.services.messaging.JsonObjects;
 import javax.json.JsonArrayBuilder;
 import javax.json.JsonObject;
 import javax.ws.rs.core.Response;
@@ -50,7 +50,7 @@ public class WiremockHelper {
 
     public static void stubAccessControl(final String... groupNames) {
 
-        final JsonArrayBuilder groupsArray = Json.createArrayBuilder();
+        final JsonArrayBuilder groupsArray = JsonObjects.createArrayBuilder();
         for (final String groupName : groupNames) {
             groupsArray.add(createObjectBuilder().add("groupId", UUID.randomUUID().toString()).add("groupName", groupName));
         }

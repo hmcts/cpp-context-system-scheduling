@@ -16,7 +16,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-import javax.json.Json;
+import uk.gov.justice.services.messaging.JsonObjects;
 import javax.json.JsonObject;
 
 import org.junit.jupiter.api.AfterEach;
@@ -99,17 +99,17 @@ public class CppJobSchedulerTest {
                 .withName("mi.command.generate-case-report"))
                 .build();
 
-        final JsonObject endpointDefinition = Json.createObjectBuilder()
+        final JsonObject endpointDefinition = JsonObjects.createObjectBuilder()
                 .add("baseUri", "http://localhost:8080/mi-command-api/command/api/rest/mi")
                 .add("resource", "/generate-case-report")
                 .add("mediaType", "mi.command.generate-case-report")
                 .build();
 
-        final JsonObject jobDetails = Json.createObjectBuilder().add("id", jobId)
+        final JsonObject jobDetails = JsonObjects.createObjectBuilder().add("id", jobId)
                 .add("name", name)
                 .add("description", description)
                 .add("type", "REST")
-                .add("parameters", Json.createObjectBuilder()
+                .add("parameters", JsonObjects.createObjectBuilder()
                         .add("endpointDefinition", endpointDefinition)
                         .add("method", "POST")
                         .add("envelope", jobCommand.asJsonObject())

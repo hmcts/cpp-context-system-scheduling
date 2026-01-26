@@ -2,7 +2,7 @@ package uk.gov.moj.cpp.system.scheduling.event.processor.scheduler;
 
 
 import static java.util.Collections.emptySet;
-import static javax.json.Json.createObjectBuilder;
+import static uk.gov.justice.services.messaging.JsonObjects.createObjectBuilder;
 import static uk.gov.justice.services.messaging.JsonEnvelope.envelopeFrom;
 import static uk.gov.justice.services.messaging.JsonObjects.createObjectBuilderWithFilter;
 import static uk.gov.justice.services.messaging.spi.DefaultJsonMetadata.metadataBuilderFrom;
