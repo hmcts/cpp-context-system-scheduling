@@ -12,7 +12,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import javax.json.Json;
+import uk.gov.justice.services.messaging.JsonObjects;
 import javax.json.JsonObject;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -25,7 +25,7 @@ public class JobTest {
     private final static UUID id = UUID.randomUUID();
     private final static String name = "Daily report";
     private final static String description = "Generates daily report";
-    private final static JsonObject parameters = Json.createObjectBuilder().build();
+    private final static JsonObject parameters = JsonObjects.createObjectBuilder().build();
     private final static String type = "REST";
     private final static String cronExpression1 = "0 30 21 * * ?";
     private final static String cronExpression2 = "0 0 21 * * ?";

@@ -14,7 +14,7 @@ import uk.gov.justice.services.core.sender.Sender;
 import uk.gov.justice.services.messaging.JsonEnvelope;
 import uk.gov.justice.services.test.utils.core.enveloper.EnvelopeFactory;
 
-import javax.json.Json;
+import uk.gov.justice.services.messaging.JsonObjects;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -34,7 +34,7 @@ public class SystemJobSchedulingApiTest {
     public void scheduleJob() {
 
         final JsonEnvelope command = EnvelopeFactory.createEnvelope("systemscheduling.command.schedule-job"
-                , Json.createObjectBuilder().add("cronExpression", "0 0/0 * * * ?").build());
+                , JsonObjects.createObjectBuilder().add("cronExpression", "0 0/0 * * * ?").build());
         systemJobSchedulingApi.scheduleJob(command);
         verify(sender).send(command);
     }
@@ -43,7 +43,7 @@ public class SystemJobSchedulingApiTest {
     public void scheduleJobWithBadCronExpression() throws Exception {
         //Given
         final JsonEnvelope command = EnvelopeFactory.createEnvelope("systemscheduling.command.schedule-job"
-                , Json.createObjectBuilder().add("cronExpression", "-1 0/0 * * * ?").build());
+                , JsonObjects.createObjectBuilder().add("cronExpression", "-1 0/0 * * * ?").build());
 
 
         final BadRequestException badRequestException = assertThrows(BadRequestException.class, () -> systemJobSchedulingApi.scheduleJob(command));

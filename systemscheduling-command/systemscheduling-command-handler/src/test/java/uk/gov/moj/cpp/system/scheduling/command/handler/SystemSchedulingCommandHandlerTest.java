@@ -27,7 +27,7 @@ import uk.gov.moj.cpp.system.scheduling.event.JobScheduled;
 import java.util.UUID;
 import java.util.stream.Stream;
 
-import javax.json.Json;
+import uk.gov.justice.services.messaging.JsonObjects;
 import javax.json.JsonObject;
 
 import org.junit.jupiter.api.Test;
@@ -64,7 +64,7 @@ public class SystemSchedulingCommandHandlerTest {
         final UUID jobId = UUID.randomUUID();
         final String name = "MIReport";
         final String description = "Generates reports for the cases";
-        final JsonObject parameters = Json.createObjectBuilder().build();
+        final JsonObject parameters = JsonObjects.createObjectBuilder().build();
         final String type = "REST";
         final String cronExpression = "0 0/0 * * * ?";
 
