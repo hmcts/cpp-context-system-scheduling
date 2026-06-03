@@ -5,12 +5,12 @@
     <parent>
         <groupId>uk.gov.moj.cpp.systemscheduling</groupId>
         <artifactId>systemscheduling-domain-transformation</artifactId>
-        <version>17.104.11-PEG-2848-R14-SNAPSHOT</version>
+        <version>17.104.12-PEG-2848-R14-SNAPSHOT</version>
     </parent>
 
     <groupId>uk.gov.moj.cpp.systemscheduling</groupId>
     <artifactId>systemscheduling-domain-transformation-anonymise</artifactId>
-    <version>17.104.11-PEG-2848-R14-SNAPSHOT</version>
+    <version>17.104.12-PEG-2848-R14-SNAPSHOT</version>
 
 
     <dependencies>
