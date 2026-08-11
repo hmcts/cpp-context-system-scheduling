@@ -1,15 +1,15 @@
 package uk.gov.moj.cpp.system.scheduling.event.processor.helpers;
 
 
-import static javax.json.Json.createReader;
+import static jakarta.json.Json.createReader;
 
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.UncheckedIOException;
 import java.nio.charset.Charset;
 
-import javax.json.JsonObject;
-import javax.json.JsonReader;
+import jakarta.json.JsonObject;
+import jakarta.json.JsonReader;
 
 import com.google.common.io.Resources;
 

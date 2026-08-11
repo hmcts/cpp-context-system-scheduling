@@ -4,7 +4,7 @@ import uk.gov.justice.domain.annotation.Event;
 
 import java.util.UUID;
 
-import javax.json.JsonObject;
+import jakarta.json.JsonObject;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 

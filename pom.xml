@@ -5,12 +5,12 @@
     <parent>
         <groupId>uk.gov.moj.cpp.common</groupId>
         <artifactId>service-parent-pom</artifactId>
-        <version>17.104.0</version>
+        <version>25.104.0-M10</version>
     </parent>
 
     <groupId>uk.gov.moj.cpp.systemscheduling</groupId>
     <artifactId>systemscheduling-parent</artifactId>
-    <version>17.104.10-SNAPSHOT</version>
+    <version>25.104.0-M1-SNAPSHOT</version>
 
     <packaging>pom</packaging>
 
