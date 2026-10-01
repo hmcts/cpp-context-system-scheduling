@@ -2,7 +2,7 @@ package uk.gov.moj.cpp.system.scheduling.event.processor.scheduler;
 
 
 import static java.util.Collections.emptySet;
-import static javax.json.Json.createObjectBuilder;
+import static jakarta.json.Json.createObjectBuilder;
 import static uk.gov.justice.services.messaging.JsonEnvelope.envelopeFrom;
 import static uk.gov.justice.services.messaging.JsonObjects.createObjectBuilderWithFilter;
 import static uk.gov.justice.services.messaging.spi.DefaultJsonMetadata.metadataBuilderFrom;
@@ -20,9 +20,9 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-import javax.ejb.Stateless;
-import javax.inject.Inject;
-import javax.json.JsonObject;
+import jakarta.ejb.Stateless;
+import jakarta.inject.Inject;
+import jakarta.json.JsonObject;
 
 @Stateless
 public class ScheduleJobProcessor {

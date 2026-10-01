@@ -1,6 +1,6 @@
 package uk.gov.moj.cpp.system.scheduling.event.processor.scheduler;
 
-import javax.enterprise.inject.spi.CDI;
+import jakarta.enterprise.inject.spi.CDI;
 
 import org.quartz.Job;
 import org.quartz.Scheduler;

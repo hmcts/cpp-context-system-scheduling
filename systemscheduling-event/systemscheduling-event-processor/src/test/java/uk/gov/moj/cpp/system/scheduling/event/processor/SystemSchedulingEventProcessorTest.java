@@ -13,8 +13,8 @@ import static uk.gov.justice.services.test.utils.core.messaging.JsonEnvelopeBuil
 import uk.gov.justice.services.messaging.JsonEnvelope;
 import uk.gov.moj.cpp.system.scheduling.event.processor.scheduler.CppJobScheduler;
 
-import javax.json.Json;
-import javax.json.JsonObject;
+import jakarta.json.Json;
+import jakarta.json.JsonObject;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
