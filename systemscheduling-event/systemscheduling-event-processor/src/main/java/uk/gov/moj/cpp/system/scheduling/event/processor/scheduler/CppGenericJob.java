@@ -1,6 +1,6 @@
 package uk.gov.moj.cpp.system.scheduling.event.processor.scheduler;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.quartz.Job;
 import org.quartz.JobDataMap;

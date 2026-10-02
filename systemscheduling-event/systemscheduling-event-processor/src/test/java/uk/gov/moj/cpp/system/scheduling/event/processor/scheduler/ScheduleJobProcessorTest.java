@@ -28,8 +28,8 @@ import uk.gov.justice.services.test.utils.core.matchers.JsonEnvelopeMatcher;
 import java.util.Optional;
 import java.util.Set;
 
-import javax.json.Json;
-import javax.json.JsonObject;
+import jakarta.json.Json;
+import jakarta.json.JsonObject;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
